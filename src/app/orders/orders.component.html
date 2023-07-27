@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <h3 class="mt-2 mb-1">List of Products | Lazy loading 
+      <span style="font-size: 12px;">
+          <strong>({{items.length}} of {{totalCount}})</strong>
+      </span>
+    </h3>
+    <ul class="list-group mt-3" #uiElement
+    style="overflow-y: auto;max-height:400px;"
+    (scroll)="onScrollLoadData()"  >
+      <li class="list-group-item" *ngFor="let item of items" style="display: flex; gap:10px;">
+        <span ><strong>{{item.title ? item.title : 'No Title'}}</strong></span>
+        <span >{{item.price}}</span>
+      </li>
+    </ul>
+  </div>
